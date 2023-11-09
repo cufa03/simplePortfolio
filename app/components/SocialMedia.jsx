@@ -1,0 +1,45 @@
+'use client';
+import { useState } from 'react';
+import Link from 'next/link';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { BiLogoGmail } from 'react-icons/bi';
+import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
+
+export default function SocialMedia() {
+  const [copied, setCopied] = useState(false);
+  const handleClick = () => {
+    setCopied(true);
+    setTimeout(() => {
+      setCopied(false);
+    }, 2000);
+  };
+  return (
+    <div className='flex flex-col'>
+      <div className='flex justify-center text-5xl gap-16 py-3 text-gray-800 dark:text-gray-200'>
+        <Link href={'https://github.com/cufa03'}>
+          <AiFillGithub className='hover:text-black hover:rounded-full' />
+        </Link>
+        <Link href={'https://www.linkedin.com/in/facundonadaf/'}>
+          <AiFillLinkedin className='hover:text-blue-700' />
+        </Link>
+        <Link href='#' onClick={handleClick}>
+          <CopyToClipboard text='facundo.nadaf@gmail.com'>
+            <BiLogoGmail className='hover:text-red-700' />
+          </CopyToClipboard>
+        </Link>
+      </div>
+      {/* <div className='flex justify-end relative'>
+        <span className='text-sm absolute bottom-16 text-black font-medium border-[5px] border-green-600 rounded-md bg-green-600 p-1'>
+          Mail copied to clipboard
+        </span>
+      </div> */}
+      <div className='flex justify-end relative'>
+        {copied && (
+          <span className='text-sm absolute bottom-16 text-black font-medium border-[5px] border-teal-500 rounded-md bg-teal-500 p-1'>
+            Mail copied to clipboard
+          </span>
+        )}
+      </div>
+    </div>
+  );
+}

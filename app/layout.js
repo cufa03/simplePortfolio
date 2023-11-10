@@ -1,5 +1,5 @@
 import { Inter } from 'next/font/google';
-import NavBar from './components/NavBar';
+// import NavBar from './components/NavBar';
 
 import './globals.css';
 
@@ -15,9 +15,8 @@ export default function RootLayout({ children }) {
     <html lang='en'>
       <body className={inter.className}>
         {/* <header>
-          <NavBar />
+          <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
         </header> */}
-
         {children}
       </body>
     </html>

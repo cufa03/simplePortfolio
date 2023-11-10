@@ -15,27 +15,27 @@ export default function SocialMedia() {
   };
   return (
     <div className='flex flex-col'>
-      <div className='flex justify-center text-5xl gap-16 py-3 text-gray-800 dark:text-gray-200'>
+      <div className='flex justify-center text-5xl gap-16 py-3 text-gray-500 dark:text-gray-200'>
         <Link href={'https://github.com/cufa03'}>
           <AiFillGithub className='hover:text-black hover:rounded-full' />
         </Link>
         <Link href={'https://www.linkedin.com/in/facundonadaf/'}>
-          <AiFillLinkedin className='hover:text-blue-700' />
+          <AiFillLinkedin className='hover:text-blue-600' />
         </Link>
-        <Link href='#' onClick={handleClick}>
+        <button onClick={handleClick}>
           <CopyToClipboard text='facundo.nadaf@gmail.com'>
-            <BiLogoGmail className='hover:text-red-700' />
+            <BiLogoGmail className='hover:text-red-600' />
           </CopyToClipboard>
-        </Link>
+        </button>
       </div>
-      {/* <div className='flex justify-end relative'>
-        <span className='text-sm absolute bottom-16 text-black font-medium border-[5px] border-green-600 rounded-md bg-green-600 p-1'>
+      {/* <div>
+        <span className='text-sm absolute bottom-12 right-14 text-black font-bold border-[5px] border-teal-500 rounded-md bg-teal-500 p-3'>
           Mail copied to clipboard
         </span>
       </div> */}
-      <div className='flex justify-end relative'>
+      <div>
         {copied && (
-          <span className='text-sm absolute bottom-16 text-black font-medium border-[5px] border-teal-500 rounded-md bg-teal-500 p-1'>
+          <span className='text-sm absolute bottom-12 right-14 text-black font-bold border-[5px] border-teal-400 rounded-md bg-teal-400 p-3'>
             Mail copied to clipboard
           </span>
         )}
